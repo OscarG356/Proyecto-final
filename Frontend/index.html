@@ -3,72 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <title>Document</title>
+    <title>Localiza Rent a Car</title>
+    <link rel="stylesheet" href="/Frontend/CSS/styles.css">
 </head>
 <body>
     <header>
-         <p>*Barrita blanca*</p>
+        <div class="logo">
+            <img src="logo.png" alt="Localiza Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Reserva</a></li>
+                <li><a href="#">Flota</a></li>
+                <li><a href="#">Destinos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="login">
+            <a href="#">Login</a>
+        </div>
     </header>
 
+    <main>
+        <section class="new-reservation">
+            <h1>Nueva reserva</h1>
+            <form>
+                <label for="location">Informa el local de retirada (ej: Bogotá, Medellín)</label>
+                <input type="text" id="location" name="location" required>
 
-    <div id="search">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="https://th.bing.com/th/id/OIP.nXejkGYDtD8KjidmNvsz6gHaEZ?rs=1&pid=ImgDetMain" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                Bootstrap
-            </a>
+                <label for="date">Fecha</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Hora</label>
+                <input type="time" id="time" name="time" required>
+
+                <button type="submit">Buscar</button>
+            </form>
+            <a href="#" class="monthly-rental">Ahorra con el alquiler mensual</a>
+        </section>
+
+        <section class="fleet">
+            <h2>Conoce nuestra flota</h2>
+            <div class="car-group">
+                <img src="car.png" alt="Car Image">
+                <p>Grupo C - Económico Con Aire Mecánico</p>
+                <p>Vehículo similar a: Kia Picanto 1.0, Fiat Mobi 1.0, Suzuki S-Presso 1.0, entre otros.</p>
+                <a href="#">MIRA TODOS LOS GRUPOS</a>
             </div>
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                </div>
+        </section>
+
+        <section class="destinations">
+            <h2>Destinos para descubrir e inspirarte</h2>
+            <div class="destination">
+                <img src="destination1.png" alt="Destination Image">
+                <p>3 regiones para conocer la b...</p>
             </div>
-        </nav>
-        <div id="take">
-            <div class="input-box">
-                <input required="" type="text" class="input">
-                <label class="label text--flicking">Lugar de retirada</label>
-                <i class="bi bi-geo-alt-fill"></i>
+            <div class="destination">
+                <img src="destination2.png" alt="Destination Image">
+                <p>¿Cómo funciona el Pico y Pl...</p>
             </div>
-            <div class="input-box">
-                <input required="" type="text" class="input">
-                <label class="label text--flicking">Fecha</label>
-                <i class="bi bi-calendar-event"></i>
-            </div>
-            <div class="input-box">
-                <input required="" type="text" class="input">
-                <label class="label text--flicking">Hora</label>
-                <i class="bi bi-clock"></i>
-            </div>
+            <a href="#">CONSULTA TODOS LOS DESTINOS</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact">
+            <h3>Contactos</h3>
+            <ul>
+                <li><a href="#">Envía tu mensaje</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li>Central de reservas 24h - 01 8000 520 001</li>
+                <li>Atención al clientes 24h (Whatsapp) - +57 305 412 6837</li>
+            </ul>
         </div>
-
-    </div>
-
-
-
+        <div class="social-media">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="youtube.png" alt="YouTube"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        </div>
+    </footer>
 </body>
 </html>
