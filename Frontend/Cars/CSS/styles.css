@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #01602a;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+header .login a {
+    color: white;
+    text-decoration: none;
+}
+
+header a:hover {
+    border-bottom: 2px solid white;
+    transition: all 1s ease;
+}
+
+header a:not(hover) {
+    margin: 0px;
+    transition: all 1s ease;
+}
+
+h1{
+    text-align: center;
+    margin-top: 20px;
+    color: #004521  ;
+}
+
+#container {
+    display: flex;
+    justify-content:space-around;
+    align-items: top;
+    padding: 20px;
+}
+
+aside{
+    margin-top: 24px;
+    width: 20%;
+    border: solid 1px black;
+    background-color: rgb(253, 253, 253);
+    padding: 5%;
+    border-radius: 10px;
+}
+
+main{
+    width: 75%;
+    padding: 1%;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card{
+    width: 30%;
+    margin: 1%;
+    text-align: center;
+}
+
+.card a{
+    color: #004521;
+    background-color: #78de1f;
+    border-color: #78de1f;
+}
