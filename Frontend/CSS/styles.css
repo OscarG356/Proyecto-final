@@ -178,9 +178,15 @@ footer .contact ul li {
     margin: 5px 0;
 }
 
-footer .social-media a img {
+footer .contact ul li a{
+    margin: 5px 0;
+    color: #78de1f;
+}
+
+footer .social-media a svg {
     height: 30px;
     margin: 0 10px;
+    color: #78de1f;
 }
 
 .floating-cart {
