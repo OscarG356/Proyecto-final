@@ -17,7 +17,7 @@ import (
 
 func main() {
 	conn, err := ConectarDB(fmt.Sprintf("postgres://%s:%s@db:%s/%s?sslmode=disable", os.Getenv("DB_USER"),
-		os.Getenv("DB_PASSWORD"), os.Getenv("DB_PORT"), os.Getenv("DB_NAME")), "postgres")
+		os.Getenv("DB_PASS"), os.Getenv("DB_PORT"), os.Getenv("DB_NAME")), "postgres")
 	if err != nil {
 		log.Fatalln("error conectando a la base de datos", err.Error())
 	}

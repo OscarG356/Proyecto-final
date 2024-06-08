@@ -1,24 +1,17 @@
 GET /users HTTP/1.1
 Host: localhost:8080
 
-POST /cars HTTP/1.1
+GET  /cars HTTP/1.1
 Host: localhost:8080
 Content-Type: application/json
 {
-    "marca":         "Mazda",
-    "referencia":     "CX-30",
-    "modelo":         "2023",
-    "tipo":           "SUV",
-    "potencia":       "180 HP",
-    "torque":         "200 Nm",
+    "marca":         "Toyota",
+    "modelo":         "Corolla",
+    "tipo":           "Sedan",
     "transmision":    "Automatica",
-    "motor":          "2.5L",
-    "pasajeros":      "7Pasajeros",
-    "combustible":    "Extra",
-    "consumo":        "Elevado",
-    "almacenamiento": "Elevado",
-    "descripcion":    "Que chimba de carro",
-    "lujo":           1,
-    "deportivo":      0,
-    "imagen":         "Holaaaa"
+    "combustible":    "Gasolina",
+    "color":          "Negro",
+    "ubicacion":      "Bogota",
+    "reservado":      "true",
+    "imagen":         "/Backend/images/corola_toyota.png"
 }
