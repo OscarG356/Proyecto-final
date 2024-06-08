@@ -8,6 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/Frontend/Cars/CSS/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/Frontend/Cars/JS/script.js" async></script>
 
     <link rel="shortcut icon" href="/Frontend/Img/Logo.png" type="image/x-icon">
     <title>EasyRent</title>
@@ -19,11 +21,8 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Reserva</a></li>
-                <li><a href="#">Flota</a></li>
-                <li><a href="#">Destinos</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="/Frontend/index.html">Inicio</a></li>
+                <li><a href="/Frontend/Cars/cars.html">Flota</a></li>
             </ul>
         </nav>
         <div class="login">
@@ -35,75 +34,116 @@
 
     <div id="container">
         <aside id="filtros">
-          <h2 id="name">Machito</h2>
+          <h2 id="name">Carro</h2>
 
           <div class="filtro" id="ubi">
             <h3>Ubicación</h3>
-            <ul>
-              <li><a href="">Antioquia</a></li>
-              <li><a href="">Atlántico</a></li>
-              <li><a href="">Bogotá D.C.</a></li>
-              <li><a href="">Bolívar</a></li>
-              <li><a href="">Cesar</a></li>
-              <li><a href="">Cundinamarca</a></li>
-              <li><a href="">Huila</a></li>
-              <li><a href="">La Guajira</a></li>
-              <li><a href="">Magdalena</a></li>
-              <li><a href="">Meta</a></li>
-              <li><a href="">Risaralda</a></li>
-              <li><a href="">Santander</a></li>
-              <li><a href="">Tolima</a></li>
-              <li><a href="">Valle Del Cauca</a></li>
-            </ul>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Seleccione
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="">Antioquia</a></li>
+                <li><a href="">Atlántico</a></li>
+                <li><a href="">Bogotá D.C.</a></li>
+                <li><a href="">Bolívar</a></li>
+                <li><a href="">Cesar</a></li>
+                <li><a href="">Cundinamarca</a></li>
+                <li><a href="">Huila</a></li>
+                <li><a href="">La Guajira</a></li>
+                <li><a href="">Magdalena</a></li>
+                <li><a href="">Meta</a></li>
+                <li><a href="">Risaralda</a></li>
+                <li><a href="">Santander</a></li>
+                <li><a href="">Tolima</a></li>
+                <li><a href="">Valle Del Cauca</a></li>
+              </ul>
+            </div>
           </div>
 
           <div class="filtro" id="Marca">
+
             <h3>Marca</h3>
-            <ul>
-              <li><a href="">Chevrolet</a></li>
-              <li><a href="">Renault</a></li>
-              <li><a href="">Mazda</a></li>
-              <li><a href="">Nissan</a></li>
-              <li><a href="">Toyota</a></li>
-              <li><a href="">Ford</a></li>
-              <li><a href="">Hyundai</a></li>
-              <li><a href="">Kia</a></li>
-              <li><a href="">Volkswagen</a></li>
-              <li><a href="">Honda</a></li>
-              <li><a href="">BMW</a></li>
-              <li><a href="">Mercedes-Benz</a></li>
-              <li><a href="">Audi</a></li>
-              <li><a href="">Jeep</a></li>
-            </ul>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Seleccione
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="">Chevrolet</a></li>
+                <li><a href="">Renault</a></li>
+                <li><a href="">Mazda</a></li>
+                <li><a href="">Nissan</a></li>
+                <li><a href="">Toyota</a></li>
+                <li><a href="">Ford</a></li>
+                <li><a href="">Hyundai</a></li>
+                <li><a href="">Kia</a></li>
+                <li><a href="">Volkswagen</a></li>
+                <li><a href="">Honda</a></li>
+                <li><a href="">BMW</a></li>
+                <li><a href="">Mercedes-Benz</a></li>
+                <li><a href="">Audi</a></li>
+                <li><a href="">Jeep</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="filtro" id="color">
+            <h3>Color</h3>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Seleccione
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="">Rojo</a></li>
+                <li><a href="">Azul</a></li>
+                <li><a href="">Negro</a></li>
+                <li><a href="">Blanco</a></li>
+                <li><a href="">Gris</a></li>
+                <li><a href="">Amarillo</a></li>
+              </ul>
+            </div>
           </div>
 
           <div class="filtro" id="tipo">
-            <h3>Marca</h3>
-            <ul>
-              <li><a href="">Sedan</a></li>
-              <li><a href="">SUV</a></li>
-              <li><a href="">Hatchback</a></li>
-              <li><a href="">Pickup</a></li>
-              <li><a href="">Convertible</a></li>
-            </ul>
+            <h3>Tipo de vehiculo</h3>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Seleccione
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="">Sedan</a></li>
+                <li><a href="">SUV</a></li>
+                <li><a href="">Pickup</a></li>
+              </ul>
+            </div>
           </div>
 
-          <div class="filtro" id="transicion">
+          <div class="filtro" id="transmision">
             <h3>Tipo de Transición</h3>
-            <ul>
-              <li><a href="">Automática</a></li>
-              <li><a href="">Manual</a></li>
-            </ul>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Seleccione
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="">Automática</a></li>
+                <li><a href="">Manual</a></li>
+              </ul>
+            </div>
           </div>
 
           <div class="filtro" id="combustible">
             <h3>Tipo de Combustible</h3>
-            <ul>
-              <li><a href="">Gasolina</a></li>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Seleccione
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="">Gasolina</a></li>
               <li><a href="">Diésel</a></li>
               <li><a href="">Eléctrico</a></li>
               <li><a href="">Híbrido</a></li>
-            </ul>
+              </ul>
+            </div>
           </div>
 
         </aside>
