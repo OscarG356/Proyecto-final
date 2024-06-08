@@ -14,7 +14,7 @@ import (
 var (
 	ListQueryC   = "SELECT * FROM Carro limit $1 offset $2"
 	ReadQueryC   = "SELECT * FROM Carro WHERE id=$1"
-	CreateQueryC = "INSERT INTO Carro (marca, referencia, modelo, tipo, potencia, torque, transmision, motor, pasajeros, combustible, consumo, almacenamiento, descripcion, lujo, deportivo, imagen, reservado) VALUES (:marca, :referencia, :modelo, :tipo, :potencia, :torque, :transmision, :motor, :pasajeros, :combustible, :consumo, :almacenamiento, :descripcion, :lujo, :deportivo, :imagen, :reservado) RETURNING id"
+	CreateQueryC = "INSERT INTO Carro (marca, modelo, tipo, transmision, combustible, color, ubicacion, reservado, imagen) VALUES (:marca, :modelo, :tipo, :transmision, :combustible, :color, :ubicacion, :reservado, :imagen) RETURNING id"
 	UpdateQueryC = "UPDATE Carro SET %s WHERE id=:id"
 	DeleteQueryC = "DELETE FROM Carro WHERE id=$1"
 )
@@ -215,24 +215,15 @@ func (c *Controller) CrearCarro(body []byte) (int64, error) {
 		return 0, fmt.Errorf("fallo al crear un carro,  error: %s", err.Error())
 	}
 	valores_columnas := map[string]any{
-		"id":             NuevoCarro.Id,
-		"marca":          NuevoCarro.Marca,
-		"referencia":     NuevoCarro.Referencia,
-		"modelo":         NuevoCarro.Modelo,
-		"tipo":           NuevoCarro.Tipo,
-		"potencia":       NuevoCarro.Potencia,
-		"torque":         NuevoCarro.Torque,
-		"transmision":    NuevoCarro.Transmision,
-		"motor":          NuevoCarro.Motor,
-		"pasajeros":      NuevoCarro.Pasajeros,
-		"combustible":    NuevoCarro.Combustible,
-		"consumo":        NuevoCarro.Consumo,
-		"almacenamiento": NuevoCarro.Almacenamiento,
-		"descripcion":    NuevoCarro.Descripcion,
-		"lujo":           NuevoCarro.Lujo,
-		"deportivo":      NuevoCarro.Deportivo,
-		"imagen":         NuevoCarro.Imagen,
-		"reservado":      NuevoCarro.Reservado,
+		"id":          NuevoCarro.Id,
+		"marca":       NuevoCarro.Marca,
+		"modelo":      NuevoCarro.Modelo,
+		"tipo":        NuevoCarro.Tipo,
+		"transmision": NuevoCarro.Transmision,
+		"combustible": NuevoCarro.Combustible,
+		"ubicacion":   NuevoCarro.Ubicacion,
+		"reservado":   NuevoCarro.Reservado,
+		"imagen":      NuevoCarro.Imagen,
 	}
 	NuevoId, err := c.repo.Create(context.TODO(), CreateQueryC, valores_columnas)
 	if err != nil {
