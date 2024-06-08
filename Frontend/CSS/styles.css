@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
 }
 
 header {
@@ -44,21 +45,36 @@ main {
 
 .new-reservation {
     background-color: #e6f2e6;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.new-reservation:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .new-reservation h1 {
     color: #004d00;
+    margin-bottom: 20px;
 }
 
 .new-reservation form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .new-reservation form label {
     margin: 10px 0 5px;
+    width: 100%;
+    text-align: left;
 }
 
 .new-reservation form input {
@@ -66,15 +82,19 @@ main {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
 }
 
 .new-reservation form button {
-    padding: 10px;
+    padding: 10px 20px;
     background-color: #004d00;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
+    max-width: 400px;
 }
 
 .new-reservation .monthly-rental {
@@ -84,12 +104,32 @@ main {
     text-decoration: none;
 }
 
+.section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 80%;
+    max-width: 900px;
+    display: flex; /* Cambia a un contenedor de flexbox */
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten a la fila */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+}
+
+.section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 .fleet, .destinations {
     margin-bottom: 20px;
 }
 
 .fleet h2, .destinations h2 {
     color: #004d00;
+    text-align: center;
 }
 
 .car-group, .destination {
@@ -97,11 +137,26 @@ main {
     padding: 20px;
     margin: 10px 0;
     text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: calc(33.33% - 20px); /* Establece el ancho para tres tarjetas en una fila */
+    max-width: 300px; /* Establece el ancho máximo de las tarjetas */
+    flex: 1 0 auto; /* Hace que las tarjetas se expandan horizontalmente */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Oculta el contenido que desborde */
+}
+
+.car-group:hover, .destination:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .car-group img, .destination img {
     max-width: 100%;
     height: auto;
+    margin: 0 auto;
 }
 
 footer {
@@ -126,4 +181,78 @@ footer .contact ul li {
 footer .social-media a img {
     height: 30px;
     margin: 0 10px;
+}
+
+.floating-cart {
+    position: fixed;
+    right: -60px; 
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #004d00;
+    color: white;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.floating-cart img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.floating-cart:hover {
+    right: 0; /* Fully visible on hover */
+}
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
 }
