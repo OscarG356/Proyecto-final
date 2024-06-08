@@ -1,35 +1,28 @@
-CREATE TABLE IF NOT EXISTS Carro (
+CREATE TABLE IF NOT EXISTS Carros (
     id SERIAL PRIMARY KEY,
-    marca TEXT,
-    referencia TEXT,
-    modelo TEXT,
-    tipo TEXT,
-    potencia TEXT,
-    torque TEXT,
-    transmision TEXT,
-    motor TEXT,
-    pasajeros TEXT,
-    combustible TEXT,
-    consumo TEXT,
-    almacenamiento TEXT,
-    descripcion TEXT,
-    lujo INT,
-    deportivo INT,
-    imagen TEXT,
-    reservado INT
+    marca VARCHAR(100),
+    modelo VARCHAR(100),
+    tipo VARCHAR(100),
+    transmision VARCHAR(100),
+    combustible VARCHAR(100),
+	color VARCHAR(100),
+	ubicacion VARCHAR(100),
+	imagen VARCHAR(255)
 );
 
-INSERT INTO Carro (marca, referencia, modelo, tipo, potencia, torque, transmision, motor, pasajeros, combustible, consumo, almacenamiento, descripcion, lujo, deportivo, imagen, reservado) 
-VALUES ('Kia', 'Kia Picanto Zenith', '2020', 'Hatchback', '83 HP', '112 Nm','Manual', '1.25L', '5 Pasajeros', 'Corriente', '70 km/galon', '255L', 'Carro pequeño para transportarse en la ciudad', 0, 0, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRedPGs70M7UOKozuucEnt-ENxYuEGB_x_Fg&s',0);
+INSERT INTO carros (marca, modelo, tipo, transmision, combustible, color, ubicacion, imagen) VALUES
+   ('Toyota', 'Corolla', 'Sedan', 'Automática', 'Gasolina', 'Negro', 'Bogotá', '\Backend\images\corola_toyota.png'),
+   ('Honda', 'Civic', 'Sedan', 'Manual', 'Gasolina', 'Azul', 'Medellín', '\Backend\images\honda_civic.png'),
+   ('Ford', 'F-150', 'Camioneta', 'Automática', 'Gasolina', 'Rojo', 'Cali', '\Backend\images\ford_f150.jpeg'),
+   ('Chevrolet', 'Camaro', 'Deportivo', 'Automática', 'Gasolina', 'Amarillo', 'Barranquilla', '\Backend\images\camaro_chevrolet.png'),
+   ('Volkswagen', 'Golf', 'Hatchback', 'Manual', 'Diesel', 'Blanco', 'Cartagena', '\Backend\images\golf_volks.png');
 
-INSERT INTO Carro (marca, referencia, modelo, tipo, potencia, torque, transmision, motor, pasajeros, combustible, consumo, almacenamiento, descripcion, lujo, deportivo, imagen, reservado) 
-VALUES ('Volkswagen', 'Volkswagen Golf R', '2022', 'Hatchback', '315 HP', '400 Nm','Automatica', '2.0L', '5 Pasajeros', 'Extra', '50 km/galon', '341L', 'Carro con potencia increible y un diseño muy deportivo', 1, 1, 'https://www.namesnack.com/images/Namesnack-nombres-para-concesionarios-de-autos-5472x3648-20230523.jpeg?crop=21:16,smart&width=420&dpr=2',0);
-
-CREATE TABLE IF NOT EXISTS Usuario (
+CREATE TABLE IF NOT EXISTS Usuarios (
     id SERIAL PRIMARY KEY,
-    nombre TEXT,
-    contrasena TEXT,
-    reservas TEXT
+    nombre VARCHAR(100),
+    contraseña VARCHAR(100),
+	reserva VARCHAR(20)
 );
 
-INSERT INTO Usuario (nombre, contrasena, reservas) VALUES ('alejoadmin', 'alejo1234', ' ');
+INSERT INTO usuarios (nombre, contraseña, telefono, reserva) VALUES
+    ('Admin', '1234', '123456789', '1');
