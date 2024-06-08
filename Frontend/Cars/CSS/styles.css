@@ -4,6 +4,7 @@ body {
     font-family: "Nunito", sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #ededed;
 }
 
 header {
@@ -66,7 +67,6 @@ h1{
 aside{
     width: 20%;
     height: auto;
-    border: 1px solid #004521;
     padding-left: 5%;
 }
 
@@ -80,9 +80,18 @@ aside .filtro h3{
     font-weight: 600;
 }
 
+aside .filtro button{
+    background-color: #004521;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
 aside .filtro ul{
     list-style-type: none;
-    padding: 0;
+    padding: 10%;
 }
 
 aside .filtro ul li{
