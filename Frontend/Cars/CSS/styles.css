@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Nunito", sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -62,17 +64,45 @@ h1{
 }
 
 aside{
-    margin-top: 24px;
     width: 20%;
-    border: solid 1px black;
-    background-color: rgb(253, 253, 253);
-    padding: 5%;
-    border-radius: 10px;
+    height: auto;
+    border: 1px solid #004521;
+    padding-left: 5%;
+}
+
+aside h2{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+aside .filtro h3{
+    font-size: larger;
+    font-weight: 600;
+}
+
+aside .filtro ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+aside .filtro ul li{
+    text-decoration: none;
+    list-style-type: none;
+    font-size: medium;
+}
+
+aside .filtro ul li a{
+    text-decoration: none;
+    color: rgb(45, 45, 45);
+}
+
+aside .filtro ul li a:hover{
+    text-decoration: none;
+    color: #004521;
 }
 
 main{
-    width: 75%;
-    padding: 1%;
+    width: 80%;
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
